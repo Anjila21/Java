@@ -4,11 +4,12 @@ import javax.swing.*;
 
 class Form extends JFrame
 {
-    JLabel l1,l2,l3,l4,db;
+    JLabel l1,l2,l3,l4,l5,db;
     JTextField t1,t2;
     JRadioButton b1 ,b2,b3;
-    JComboBox day,month,year;//cb;
-    JTextArea ta;
+    JButton b4;
+    JComboBox day,month,year,cb;
+    JTextArea ta,ta1;
     JCheckBox c1;
     Container c;
     public Form()
@@ -90,21 +91,37 @@ class Form extends JFrame
         
         
         ta = new JTextArea();
-        ta.setBounds(110, 250,80,30);
+        ta.setBounds(110, 250,150,100);
         c.add(ta);
         ta.setLineWrap(true);
 
         
+        l5 = new JLabel("Country:");
+        l5.setBounds(20,380,80,30);
+        c.add(l5);
+        
+         String Country[] = {"Nepal", "India", "Japan","Turkey"};
+      
+         cb = new JComboBox(Country);
+         cb.setBounds(110,380,150,30);
+        c.add(cb);
+        
+        
          c1 = new JCheckBox("I accept all the terms and conditions");
-         c1.setBounds(20,280,300,30);
+         c1.setBounds(20,420,260,30);
          c.add(c1);
+         
+         b4 = new JButton("Submit");
+         b4.setBounds(68,470,80,30);
+         c.add(b4);
+         
+         
+        ta1 = new JTextArea();
+        ta1.setBounds(300, 250,550,400);
+        c.add(ta1);
+        ta1.setLineWrap(true);
         
-//        String Country[] = {"Nepal", "India", "Japan","Turkey"};
-//       
-//        cb = new JComboBox(Country);
-//        cb.setBounds(20,200,150,30);
-//        c.add(cb);
-        
+
         
      setVisible(true);
     }
