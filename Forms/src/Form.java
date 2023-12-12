@@ -1,10 +1,12 @@
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
-class Form extends JFrame
+class Form extends JFrame implements ActionListener
 {
-    JLabel l1,l2,l3,l4,l5,db;
+    JLabel l1,l2,l3,l4,l5,l6,db;
     JTextField t1,t2;
     JRadioButton b1 ,b2,b3;
     JButton b4;
@@ -48,13 +50,16 @@ class Form extends JFrame
         b1 = new JRadioButton("Male");
         b1.setBounds(100,150,80,30);
         c.add(b1);
+      //  b1.setSelected(true);
         
         b2 = new JRadioButton("Female");
         b2.setBounds(200,150,80,30);
         c.add(b2);
+        //b2.setSelected(true);
         
          b3 = new JRadioButton("Others");
         b3.setBounds(300,150,80,30);
+      
         c.add(b3);
         
         ButtonGroup bg = new ButtonGroup();
@@ -117,13 +122,46 @@ class Form extends JFrame
          
          
         ta1 = new JTextArea();
-        ta1.setBounds(300, 250,550,400);
+        ta1.setBounds(320, 250,350,400);
         c.add(ta1);
         ta1.setLineWrap(true);
         
-
+        l6 = new JLabel();
+        l6.setBounds(20,550,300,30);
+        c.add(l6);
         
-     setVisible(true);
+        b4.addActionListener(this);
+        setVisible(true);
+}
+
+public void actionPerformed(ActionEvent e)
+        {
+    if(c1.isSelected())
+  {
+      l6.setText("Registration Sucessful");
+      String name = t1.getText();
+      String mobile = t2.getText();
+      String gen = "Female";
+      if(b1.isSelected())
+      {
+          gen="Male";
+      }
+      if(b3.isSelected())
+      {
+          gen="Others";
+      }
+      
+      String dob = day.getSelectedItem()+"-"+month.getSelectedItem()+"-"+year.getSelectedItem();
+      String address = ta.getText();
+      
+      ta1.setText("Name:"+name+"\n"+"Phone Number:"+mobile+"\n Gender:"+gen+"\n DOB:"+dob+"\nAddress:"+address);
+  }
+    else 
+    {  
+        l6.setText("Please accept Terms and Condition");
+   
+    }
+
     }
     
     public static void main(String[] args) {
