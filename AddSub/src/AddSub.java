@@ -8,9 +8,8 @@ import java.awt.Container;
 
 public class AddSub extends JFrame implements MouseListener {
 
-    JLabel l1, l2, l3;
+    JLabel l1, l2, l3, l4;
     JTextField t1, t2;
-    JButton b1;
     Container c;
 
     AddSub() {
@@ -38,21 +37,20 @@ public class AddSub extends JFrame implements MouseListener {
         c.add(t2);
 
         l3 = new JLabel();
-        l3.setBounds(60, 100, 100, 30);
-        c.add(l1);
-
-        b1 = new JButton("Submit");
-        b1.setBounds(20, 80, 100, 30);
-        c.add(b1);
-       
+        l3.setBounds(60, 150, 200, 30);
+        c.add(l3);
+        
+        l4 = new JLabel("Sumbit");
+        l4.setBounds(80, 100, 100, 30);
+        c.add(l4);
 
         setSize(300, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
-        
-        b1.addMouseListener(this);
-        
+
+        l4.addMouseListener(this);
+
         setVisible(true);
 
     }
@@ -65,12 +63,28 @@ public class AddSub extends JFrame implements MouseListener {
 
     }
 
-    public void mouseRelesed(MouseEvent e2) {
+    public void mouseReleased(MouseEvent e2) {
         int a = Integer.parseInt(t1.getText());
         int b = Integer.parseInt(t2.getText());
         int c = a - b;
         l3.setText("Subtrated Value =" + c);
     }
+    
+    public void mouseExited(MouseEvent e)
+    {
+        
+    }
+    
+    public void mouseEntered(MouseEvent e)
+    {
+        
+    }
+    
+    public void mouseClicked(MouseEvent e)
+    {
+        
+    }
+    
 
     public static void main(String[] args) {
         new AddSub();
