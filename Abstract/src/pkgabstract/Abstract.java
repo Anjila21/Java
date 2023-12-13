@@ -6,6 +6,11 @@ abstract class Person {
     public String address;
 
     public abstract void display();
+    
+    public void show()
+    {
+        
+    }
 }
 
 class Student extends Person {
