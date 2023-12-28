@@ -9,7 +9,7 @@ public class MyMenuExample
         f.setSize(500,500);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);
-        FlowLayout flowlayout = new FlowLayout(FlowLayout.LEFT);
+        FlowLayout flowLayout = new FlowLayout(FlowLayout.LEFT);
         f.setLayout(new FlowLayout());
         
         JMenuBar menubar = new JMenuBar();
