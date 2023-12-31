@@ -1,0 +1,40 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+public class JOptionMessageDialogEx implements ActionListener
+{
+    JFrame f ;
+    JButton b;
+    JOptionMessageDialogEx()
+    {
+        f = new JFrame("Input Dialog");
+        f.setSize(500,500);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);
+        f.getContentPane();
+        f.setLayout( new FlowLayout());
+        
+        b = new JButton("Button");
+        b.setBounds(20,30,50,60);
+        f.add(b);
+        
+        b.addActionListener(this);
+        
+     
+        f.setVisible(true);
+        
+        
+    }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+        JOptionPane.showMessageDialog(f,"Hello!!!","Message",JOptionPane.PLAIN_MESSAGE);
+       
+    }
+    
+    public static void main(String[] args)
+    {
+        new JOptionMessageDialogEx();
+    }
+}
