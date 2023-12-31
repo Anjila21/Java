@@ -5,21 +5,22 @@ import java.awt.event.ItemEvent;
 
 public class ItemListenerCheckBox11 implements ItemListener
 {
-    Container c;
+    //Container c;
     JCheckBox c1,c2,c3,c4;
     JTextField t1;
     ItemListenerCheckBox11()
     {   
         
-        JFrame f = new JFrame();
+        JFrame f = new JFrame("Item Listener CheckBox Ex");
         f.setSize(500,500);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);
-        c = f.getContentPane();
+        f.getContentPane();
+        f.setLayout(null);
         
         t1 = new JTextField();
-        f.setBounds(210,30,50,60);
-        c.add(t1);
+        t1.setBounds(250,150,100,60);
+        f.add(t1);
         
         c1 = new JCheckBox("Advanced Java");
         c2 = new JCheckBox("SPM");
@@ -27,22 +28,22 @@ public class ItemListenerCheckBox11 implements ItemListener
         c4 = new JCheckBox("Data WareHouse");
         
         
-        c1.setBounds(20,30,50,30);
-        c2.setBounds(80,30,50,30);
-        c3.setBounds(140,30,50,30);
-        c4.setBounds(190,30,50,30);
+        c1.setBounds(20,30,200,30);
+        c2.setBounds(80,50,200,30);
+        c3.setBounds(140,70,200,30);
+        c4.setBounds(190,100,200,30);
         
-        c.add(c1);
-        c.add(c2);
-        c.add(c3);
-        c.add(c4);        
+        f.add(c1);
+        f.add(c2);
+        f.add(c3);
+        f.add(c4);        
         
         c1.addItemListener(this);
          c2.addItemListener(this);
           c3.addItemListener(this);
            c4.addItemListener(this);
         
-           f.setLayout(null);
+       
         f.setVisible(true);
         
         

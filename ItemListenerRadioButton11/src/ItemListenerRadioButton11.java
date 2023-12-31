@@ -11,23 +11,24 @@ public class ItemListenerRadioButton11 implements ItemListener
     ItemListenerRadioButton11()
     {   
         
-        JFrame f = new JFrame();
+        JFrame f = new JFrame("ItemListener RadioButton Ex");
         f.setSize(500,500);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);
         c = f.getContentPane();
+        c.setLayout(null);
         
         t1 = new JTextField();
-        f.setBounds(210,30,50,60);
+        t1.setBounds(90,100,250,30);
         c.add(t1);
         
         r1 = new JRadioButton("Male");
         r2 = new JRadioButton("Female");
         r3 = new JRadioButton("Other");
        
-        r1.setBounds(20,30,50,30);
-        r2.setBounds(80,30,50,30);
-        r3.setBounds(140,30,50,30);
+        r1.setBounds(20,30,80,30);
+        r2.setBounds(100,30,80,30);
+        r3.setBounds(180,30,80,30);
       
         c.add(r1);
         c.add(r2);
@@ -37,7 +38,7 @@ public class ItemListenerRadioButton11 implements ItemListener
          r2.addItemListener(this);
           r3.addItemListener(this);
           
-        f.setLayout(null);
+       
         f.setVisible(true);  
     }
     
